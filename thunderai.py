@@ -20,12 +20,30 @@ logo = '''           $$$$$$"
     z$"
    z'''
 
+analyzedata_help = '''Анализ одного из доступных датасетов:
+prolangperc - популярность языков программирования с 2004 до 2023
+proglangfull - полная информация про популярность языков
+ufosightings - информация о наблюдениях НЛО'''
+
 
 def main():
 	print(logo)
 	parser = Parser('[󱐋] Thunder AI - проект для анализа данных, машинного обучения и искусственного интеллекта')
 
+	parser.add_argument('--analyzedata', analyzedata_help)
 	args = parser.get_args()
+
+	if args.analyzedata:
+		if args.analyzedata == 'proglangperc':
+			print('[!] К сожалению, эта функция в разработке!')
+		elif args.analyzedata == 'proglangfull':
+			print('[!] К сожалению, эта функция в разработке!')
+		elif args.analyzedata == 'ufosightings':
+			print('[!] К сожалению, эта функция в разработке!')
+		else:
+			print('[!] Данный датасет не найден. Используйте один из следующих: proglangperc; proglangfull; ufosightings')
+	else:
+		print(args.analyzedata)
 
 
 if __name__ == '__main__':
