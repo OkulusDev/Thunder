@@ -42,8 +42,6 @@ def main():
 			print('[!] К сожалению, эта функция в разработке!')
 		else:
 			print('[!] Данный датасет не найден. Используйте один из следующих: proglangperc; proglangfull; ufosightings')
-	else:
-		print(args.analyzedata)
 
 
 if __name__ == '__main__':
