@@ -5,7 +5,7 @@ REQ_PIP=requirements.txt
 MAINFILE=thunderai.py
 
 run:
-	$(PYTHON) $(MAINFILE)
+	$(PYTHON) $(MAINFILE) --help
 
 install:
 	$(PIP) install -r $(REQ_PIP)

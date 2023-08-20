@@ -1,6 +1,33 @@
 # thunder.ai
 Thunder AI - проект для анализа данных, машинного обучения и искусственного интеллекта
 
+## Доступные нейронные сети
+
+1. Полносвязная нейронная сеть
+2. Персептрон
+
+## Установка
+
+1. Клонируйте репозиторий
+	
+	```git clone https://github.com/thunder.ai```
+
+2. Перейдите в директорию
+3. Установите python3, python3-pip и make:
+
+	+ Debian/Ubuntu: ```apt install python3 python3-pip make```
+	+ Arch: ```pacman -Sy python3 python-pip make```
+
+4. Установите
+
+	```make install```
+	
+5. Запустите с нужным флагом (```--help``` для справки)
+
+## Использование
+
+```python3 thunderai.py --help```
+
 ## Описание коммитов
 
 | Название | Описание                                                        |
