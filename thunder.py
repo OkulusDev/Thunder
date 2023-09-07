@@ -5,6 +5,13 @@
 Создатель: Okulus Dev (C) 2023
 Лицензия: GNU GPL v3"""
 from thunderscience.parser import Parser
+
+from thunderscience.algorithms.factorial import factorial
+
+from thunderscience.astrophysics.planet_stars_movement import show_movement
+from thunderscience.astrophysics.planet_stars_movement import show_movement_with_mars_and_gravitation
+from thunderscience.astrophysics.black_holes import show_black_hole_graphic
+
 from thunderscience.neuralnetworks.futurized import is_futurized
 from thunderscience.neuralnetworks.perceptron import perceptron
 from thunderscience.neuralnetworks.perceptron_xor import perceptron_xor
@@ -38,9 +45,28 @@ def main():
 
 	parser.add_argument('--futurized', futurized_help)
 	parser.add_argument('--perceptron', perceptron_help)
+	parser.add_argument('--factorial', 'Факториал числа. Используйте вместе с числом.')
+	parser.add_argument('--planetstars_movement', 'Используйте вместе с show, чтобы показать схему')
+	parser.add_argument('--planetstars_movement_advanced', 'Используйте вместе с show, чтобы показать схему')
+	parser.add_argument('--blackhole', 'Используйте вместе с show, чтобы показать график')
 	args = parser.get_args()
 
-	if args.futurized:
+	if args.factorial:
+		if args.factorial.isdigit():
+			result = factorial(args.factorial)
+			print(f'Факториал числа {args.factorial} - {result}')
+		else:
+			print('Вы ввели не число')
+	elif args.blackhole:
+		if args.blackhole.lower().strip() == 'show':
+			show_black_hole_graphic()
+	elif args.planetstars_movement:
+		if args.planetstars_movement.lower().strip() == 'show':
+			show_movement()
+	elif args.planetstars_movement_advanced:
+		if args.planetstars_movement_advanced.lower().strip() == 'show':
+			show_movement_with_mars_and_gravitation()
+	elif args.futurized:
 		futurized_params = str(args.futurized).split(" ")
 
 		if len(futurized_params) == 3:
